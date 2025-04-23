@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-def calculate(a, c, operation):
+def calculate(a, b, operation):
     a, b = float(a), float(b)
     if operation == 'add':
         return a + b
