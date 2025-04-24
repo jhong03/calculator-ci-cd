@@ -2,7 +2,9 @@ import pytest
 import yaml
 from app import calculate
 
-with open("test_data.yml", "r") as f:
+import os
+path = os.path.join(os.path.dirname(__file__), "test_data.yml")
+with open(path, "r") as f:
     test_cases = yaml.safe_load(f)['tests']
 
 @pytest.mark.parametrize("test", test_cases)
