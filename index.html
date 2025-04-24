@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        form { margin-bottom: 20px; }
+        input, select, button { padding: 10px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h2>Simple Web Calculator</h2>
+    <form method="POST" action="/calculate">
+        <input type="number" name="a" placeholder="Enter number A" step="any" required>
+        <select name="operation" required>
+            <option value="add">+</option>
+            <option value="subtract">−</option>
+            <option value="multiply">×</option>
+            <option value="divide">÷</option>
+        </select>
+        <input type="number" name="b" placeholder="Enter number B" step="any" required>
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if result is not none %}
+        <h3>Result: {{ result }}</h3>
+    {% elif error %}
+        <h3 style="color:red;">Error: {{ error }}</h3>
+    {% endif %}
+</body>
+</html>
