@@ -1,0 +1,5 @@
+# requirements.txt
+Flask==2.3.2
+asteval==0.9.30
+customtkinter==5.2.2
+gunicorn==21.2.0
